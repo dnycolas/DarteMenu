@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Button
   - Jogo
+  - Menu
   layers:
   - Default
   - TransparentFX

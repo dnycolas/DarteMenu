@@ -1,17 +1,17 @@
 using UnityEngine;
 
-public class ButtonHider : MonoBehaviour
+public class ShowMenuAnyKey : MonoBehaviour
 {
-    // Esse método vai ser chamado quando clicar no botão
-    public void HideAllButtons()
-    {
-        // Pega todos os objetos com a Tag "Button"
-        GameObject[] buttons = GameObject.FindGameObjectsWithTag("Button");
+    public GameObject menuCanvas;
+    private bool menuAtivo = false;
 
-        // Desativa cada um
-        foreach (GameObject btn in buttons)
+    void Update()
+    {
+        // Se QUALQUER tecla ou botão for pressionado
+        if (Input.anyKeyDown)
         {
-            btn.SetActive(false);
+            menuAtivo = !menuAtivo;
+            menuCanvas.SetActive(menuAtivo);
         }
     }
 }
